@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>  <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/main.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <div id="header_wrapped">
+        <div style="display: flex;">
+            <a href="/" style="margin-left: 10px; margin-right: 10px;"><h1>title</h1></a>
+        </div>
+        <div style="display: flex;">
+<!--          if logged-->
+          <a style="margin-left: 5px; margin-right: 5px;">로그인</a>
+          <a style="margin-left: 5px; margin-right: 5px;">회원가입</a>
+<!--          not logged-->
+          <a style="margin-left: 5px; margin-right: 5px;">사용신청</a>
+          <a style="margin-left: 5px; margin-right: 5px;">정보수정</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <%- defineContent('body') %>
+    </main>
+  </body>
+</html>

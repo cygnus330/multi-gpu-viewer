@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<style>
+    * {
+        box-sizing: border-box;
+        border: 1px solid red;
+    }
+</style>
+<div class="w3-container">
+
+<p>progress bar</p>
+
+<!--<div style="background-color: lightgray">-->
+<!--<div id="myBar" style="color:black; background-color:#4CAF50; width:0%;"><p style="padding: 0.1em 1em">CUDA: 0%</p></div>-->
+<!--</div>-->
+    <div style="width: 500px; height: 50px; position: relative;">
+        <div style="position: absolute; width: 100%; height: 100%; display: flex;">
+            <div style="width: 10%; height: 100%; background-color: green;"></div>
+            <div style="width: 60%; height: 100%; background-color: lightgray;"></div>
+            <div style="width: 30%; height: 100%; background-color: pink;"></div>
+        </div>
+        <div style="position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between;">
+            <p style="padding: 0.1em 1em">10%</p>
+            <p style="padding: 0.1em 1em">30%</p>
+        </div>
+    </div>
+
+<!--    <div style="width:500px; height: 50px; position: relative; background-color: gray;">-->
+<!--        <div style="position: absolute; background-color: white; opacity: 0.4;">-->
+<!--            <p>안녕</p>-->
+<!--        </div>-->
+<!--        <p>하세요</p>-->
+<!--    </div>-->
+</div>
+
+<script>
+
+    function make(leftL, rightL) {
+        midL = Math.abs(leftL + rightL - 100);
+    }
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = '<p style="padding-left: 1em">' + width  + '%</p>';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
