@@ -1,0 +1,19 @@
+<div>
+    <div>GPU <%= i %></div>
+    <div style="width: 500px; height: 30px; position: relative; border: 1px solid black;">
+        <div style="position: absolute; width: 100%; height: 100%; display: flex;">
+            <div id="bar0_a" style="width: 0; height: 100%; background-color: green;"></div>
+            <div id="bar0_c" style="width: 100%; height: 100%; background-color: lightgray;"></div>
+            <div id="bar0_b" style="width: 0; height: 100%; background-color: pink;"></div>
+        </div>
+        <div style="position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between;">
+            <p id="bar0_ap" style="padding: 0.1em 0.5em">0%</p>
+            <p id="bar0_bp" style="padding: 0.1em 0.5em">0%</p>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        make(<%= cuda[i] %>, <%= vram[i] %>, <%= i %>);
+    })
+</script>

@@ -5,7 +5,40 @@
 </section>
 <section class="status_viewer">
   <p style="font-weight: bold; font-size: 1.3em; margin: 0.1em 0;">GPU 사용량</p>
+  <br>
+  <% for(var i=0; i<gpu_num; i++) { %>
+    <div>
+        <div>
+            <% if(useable[i]) { %>
+            <div style="color: red;">GPU <%= i %> 사용중</div>
+            <% } else { %>
+            <div>GPU <%= i %> 미사용</div>
+            <% } %>
+        </div>
+        <div style="width: 100%; height: 30px; position: relative; border: 1px solid black;">
+            <div style="position: absolute; width: 100%; height: 100%; display: flex;">
+                <div id="bar<%= i %>_a" style="width: 0; height: 100%; background-color: green;"></div>
+                <div id="bar<%= i %>_c" style="width: 100%; height: 100%; background-color: lightgray;"></div>
+                <div id="bar<%= i %>_b" style="width: 0; height: 100%; background-color: pink;"></div>
+            </div>
+            <div style="position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between;">
+                <p id="bar<%= i %>_ap" style="padding: 0.1em 0.5em">0%</p>
+                <p id="bar<%= i %>_bp" style="padding: 0.1em 0.5em">0%</p>
+            </div>
+        </div>
+      <br>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            make('<%= cuda[i] %>', '<%= vram[i] %>', '<%= i %>');
+        })
+    </script>
+  <% } %>
+    <div>
+        <button style="border: 1px solid gray; background-color: transparent;" onclick="location.href = '/rent'">GPU 사용신청</button>
+    </div>
 </section>
-<section class="status_viewer">
-  <p style="font-weight: bold; font-size: 1.3em; margin: 0.1em 0;">GPU 사용신청</p>
-</section>
+<script src="js/percentBarMove.js"></script>
+<script>
+    window.setTimeout('window.location.reload()', 1000 * 60 * 5);
+</script>
