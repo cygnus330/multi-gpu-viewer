@@ -1,7 +1,14 @@
 <%- contentFor('body') %>
-<h3 style="margin: 20px 10% 20px 10%; font-size: 1.6em">로그인</h3>
+<h3 style="margin: 20px 10% 20px 10%; font-size: 1.6em">회원가입</h3>
+<p>경기과학고 G-suite(gs.hs.kr) 메일으로만 회원가입이 가능합니다.</p>
 <form method="post" action="/login">
     <table>
+        <tr>
+            <td><label>mail: </label></td>
+            <td><label>
+                    <input type="email" name="mail">
+                </label></td>
+        </tr>
         <tr>
             <td><label>ID: </label></td>
             <td><label>

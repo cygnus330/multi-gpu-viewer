@@ -28,7 +28,7 @@ app.use(expressSession({
 
 const login = require('./routes/login');
 
-app.use('/login', login);
+app.use('/', login);
 
 app.get('/', (req, res) => {
     res.render("mainpage", {

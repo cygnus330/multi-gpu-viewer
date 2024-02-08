@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express.Router();
 
-app.get('/', (req, res) => {
+app.get('/login', (req, res) => {
     if(req.session.user) {
         res.render('login/already_logged');
     } else {
@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     }
 });
 
-app.post('/', (req, res) => {
+app.post('/login', (req, res) => {
     const post_id = req.body.ID || req.query.ID;
     const post_pw = req.body.PW || req.query.PW;
 
@@ -25,6 +25,10 @@ app.post('/', (req, res) => {
         res.write('good');
         res.end();
     }
+});
+
+app.get('/register', (req, res) => {
+
 });
 
 module.exports = app;
