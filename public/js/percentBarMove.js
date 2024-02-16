@@ -20,7 +20,7 @@ function make(leftL, rightL, barId) {
     }
 
     var end_time = 1.0;
-    var refresh_time = 1 / 240;
+    var refresh_time = 1 / 120;
     var now_time = 0;
 
     var trace_a = {
